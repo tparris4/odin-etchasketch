@@ -1,0 +1,24 @@
+.container-1 {
+    display:flex;
+    justify-content: center;
+}
+
+,container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    height: 250px;
+   border: 0px black solid;
+   margin: 0px black;
+}
+
+.divsq {
+    display:flex;
+    flex-direction: row;
+    min-height: 125px;
+    max-height: 164px;
+    min-width: 125px;
+    max-width: 164px;
+    border: 0px black solid;
+
+}
