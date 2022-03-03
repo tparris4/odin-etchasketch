@@ -5,10 +5,10 @@ function squareCreate(input){
             divsq.classList.add('divsq');
             container.appendChild(divsq);
             container.style.setProperty('.divsq', divsq);
-            const gridSize = document.querySelector('.container');
-            const size = window.getComputedStyle(gridSize);
-            divsq.style.width = 500 / input - 0.25 + "px";
-            divsq.style.height = 500 / input - 0.25 + "px";
+            // const gridSize = document.querySelector('.container');
+            // const size = window.getComputedStyle(gridSize);
+            divsq.style.width = container.getPropertyValue('width') / input - 0.25 + "px";
+            divsq.style.height = container.getPropertyValue('height') / input - 0.25 + "px";
 
             divsq.addEventListener("mouseover", (e) => {
                 e.target.style.backgroundColor = "black";
