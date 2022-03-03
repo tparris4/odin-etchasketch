@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .container-1 {
     display:flex;
     justify-content: center;
@@ -8,8 +12,8 @@
     width: 500px;
     height: 500px;
     justify-content: center;
-   border:1px black solid;
-   margin: auto;
+   border:1px black solid;          
+   
 
 }
 
@@ -17,10 +21,9 @@
     display:flex;
     border: 1px solid black ;
     padding: 1px;
-    min-width: 150px;
-    min-height; 150px;
+    
+    
 }
-
 .reset {
     margin-bottom: 32px;
 }

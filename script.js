@@ -1,18 +1,15 @@
-function gridCreate(row, col){
-    for(let i = 0; i < row; i++){
-        squareCreate(i);
-    }
-    for(let i = 0; i < col; i++){
-        squareCreate(i);
-    }
-}
 
 function squareCreate(input){
-    for(let i = 0; i < input; i++){
+    for(let i = 0; i < input * input; i++){
             const divsq = document.createElement('div');
             divsq.classList.add('divsq');
             container.appendChild(divsq);
             container.style.setProperty('.divsq', divsq);
+            const gridSize = document.querySelector('.container');
+            const size = window.getComputedStyle(gridSize);
+            divsq.style.width = 500 / input - 0.25 + "px";
+            divsq.style.height = 500 / input - 0.25 + "px";
+
             divsq.addEventListener("mouseover", (e) => {
                 e.target.style.backgroundColor = "black";
             });
@@ -21,10 +18,11 @@ function squareCreate(input){
 }
 
 function removeSq(){
-    const sq = document.querySelectorAll('divsq');
+    const sq = document.querySelectorAll('.divsq');
     for (const elem of sq){
-        elem.remove();
+        elem.parentNode.removeChild(elem);
     }
+    
 }
 
 
@@ -33,13 +31,13 @@ function removeSq(){
 const container = document.querySelector('.container');
 const btnReset = document.querySelector('.reset');
 
-gridCreate(16, 16);
+squareCreate(16);
 
 btnReset.addEventListener("click", () => {
     removeSq();
     let input = prompt("How many squares do you want? Max: 64 squares, Min: 16");
-    if(input < 64 && input > 16){
-    gridCreate(input, input);
+    if(input < 64 && input > 3){
+    squareCreate(input);
     }
 })
 
